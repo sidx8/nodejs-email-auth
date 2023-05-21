@@ -29,3 +29,5 @@ const sendOTP = (email, OTP) => {
     }
   });
 };
+
+module.exports = { generateOTP, sendOTP };

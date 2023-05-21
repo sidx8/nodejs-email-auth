@@ -3,36 +3,8 @@ const router = express.Router();
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
-const User = require("../models/User");
-
-const generateOTP = () => {
-  return crypto.randomBytes(3).toString("hex");
-};
-
-const sendOTP = (email, OTP) => {
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.EMAIL_SERVICE_USER,
-      pass: process.env.EMAIL_SERVICE_PASS,
-    },
-  });
-
-  const mailOptions = {
-    from: process.env.EMAIL_SERVICE_USER,
-    to: email,
-    subject: "Your OTP",
-    text: `Your OTP is: ${OTP}`,
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });
-};
+const User = require("../model/Users");
+const { generateOTP, sendOTP } = require("../util/otp");
 
 router.post("/generate-otp", async (req, res) => {
   const email = req.body.email;
@@ -139,8 +111,8 @@ router.post("/login", async (req, res) => {
     user.OTPAttempts = 0;
 
     await user.save();
-
     res.json({ token });
+    console.log("User logged in successfully");
   } catch (err) {
     console.log(err);
     res.status(500).send("Server error");
