@@ -89,7 +89,7 @@ If the OTP is correct, a JWT token will be returned.
 
 create otp
 
-```curl
+```bash
 curl --location --request POST 'https://nodejs-email-auth.vercel.app/auth/generate-otp' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -99,7 +99,7 @@ curl --location --request POST 'https://nodejs-email-auth.vercel.app/auth/genera
 
 login
 
-```curl
+```bash
 curl --location --request POST 'https://nodejs-email-auth.vercel.app/auth/login' \
 --header 'Content-Type: application/json' \
 --data-raw '{
