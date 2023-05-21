@@ -1,7 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const crypto = require("crypto");
-const nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
 const User = require("../model/Users");
 const { generateOTP, sendOTP } = require("../util/otp");
