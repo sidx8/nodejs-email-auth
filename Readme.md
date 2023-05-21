@@ -85,6 +85,8 @@ POST request to `http://localhost:5000/login` with request body:
 
 If the OTP is correct, a JWT token will be returned.
 
+## Testing
+
 ## Contributing
 
 If you want to contribute to this project, you're always welcome! You can create a pull request or issue, and i will take a look at it.
