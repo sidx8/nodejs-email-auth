@@ -41,7 +41,7 @@ npm install
 
 Create a .env file in your project root and add the following:
 
-```bash
+```.env
 EMAIL_SERVICE_USER=<your-email-address>
 EMAIL_SERVICE_PASS=<your-email-password>
 SECRET_KEY=<your-secret-key-for-jwt>
