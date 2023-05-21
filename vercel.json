@@ -2,7 +2,8 @@
   "version": 2,
   "builds": [{ "src": "index.js", "use": "@vercel/node" }],
   "routes": [
-    { "src": "/generate-otp", "methods": ["POST"], "dest": "index.js" },
-    { "src": "/login", "methods": ["POST"], "dest": "index.js" }
+    { "src": "/", "methods": ["GET"], "dest": "index.js" },
+    { "src": "/auth/generate-otp", "methods": ["POST"], "dest": "index.js" },
+    { "src": "/auth/login", "methods": ["POST"], "dest": "index.js" }
   ]
 }
