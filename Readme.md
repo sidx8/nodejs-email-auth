@@ -87,6 +87,27 @@ If the OTP is correct, a JWT token will be returned.
 
 ## Testing
 
+create otp
+
+```curl
+curl --location --request POST 'https://nodejs-email-auth.vercel.app/auth/generate-otp' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "<user-email>"
+}'
+```
+
+login
+
+```curl
+curl --location --request POST 'https://nodejs-email-auth.vercel.app/auth/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "<user-email>",
+    "OTP": ""<user-otp>""
+}'
+```
+
 ## Contributing
 
 If you want to contribute to this project, you're always welcome! You can create a pull request or issue, and i will take a look at it.
