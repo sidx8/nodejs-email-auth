@@ -85,7 +85,7 @@ POST request to `http://localhost:5000/login` with request body:
 
 If the OTP is correct, a JWT token will be returned.
 
-## Testing
+## Live curl Endpoints
 
 create otp
 
